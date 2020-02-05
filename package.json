@@ -7,7 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack",
     "dev": "npm run webpack -- --mode development",
-    "prod": "npm run webpack -- --mode production"
+    "debug": "node --inspect --inspect-brk ./node_modules/webpack/bin/webpack.js",
+    "prod": "npm run webpack -- --mode production",
+    "dev:debug": "npm run debug -- --mode development",
+    "prod:debug": "npm run debug -- --mode production"
   },
   "author": "",
   "license": "ISC",
