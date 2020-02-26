@@ -10,6 +10,19 @@ module.exports = ({mode, presets} = {mode: 'production', presets: []}) => (
             output: {
                 filename: "bundle.js"
             },
+            module: {
+                rules: [
+                    {
+                        test: /\.(png|jpe?g|gif)$/i,
+                        use: [{
+                            loader: 'url-loader',
+                            options: {
+                                limit: 5000
+                            }
+                        }],
+                    },
+                ],
+            },
             plugins: [
                 new HtmlWebpackPlugin(),
                 new webpack.ProgressPlugin()
