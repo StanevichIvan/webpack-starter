@@ -10,13 +10,14 @@
     "dev": "npm run webpack-dev-server -- --env.mode development --watch --hot",
     "debug": "node --inspect --inspect-brk ./node_modules/webpack/bin/webpack.js",
     "dev:debug": "npm run debug -- --env.mode development",
-    "prod": "npm run webpack -- --env.mode production",
+    "prod": "npm run webpack -- --env.mode production --env.presets compress",
     "prod:debug": "npm run debug -- --env.mode production",
     "prod:analyzer": "npm run prod -- --env.presets analyzer"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "compression-webpack-plugin": "^3.1.0",
     "css-loader": "^3.4.2",
     "file-loader": "^5.1.0",
     "html-webpack-plugin": "^3.2.0",
