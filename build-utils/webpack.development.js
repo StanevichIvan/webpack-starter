@@ -1,5 +1,6 @@
 module.exports = ({mode}) => ({
     mode,
+    devtool: 'source-map',
     module: {
         rules: [
             {
