@@ -1,3 +1,3 @@
 import './styles.css';
 
-console.log('Hello world', getBar());
+console.log('Hello world');
