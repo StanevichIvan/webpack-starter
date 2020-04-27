@@ -7,8 +7,8 @@ module.exports = {
   },
   parserOptions: {
     lib: 'dom',
-    ecmaVersion: 2020, // Allows for the parsing of modern ECMAScript features
-    sourceType: 'module', // Allows for the use of imports
+    ecmaVersion: 2020,
+    sourceType: 'module',
     project: 'tsconfig.json',
     tsconfigRootDir: '.',
   },
