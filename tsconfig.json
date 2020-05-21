@@ -12,7 +12,8 @@
     "strict": true,
     // Import non-ES modules as default imports.
     "esModuleInterop": true,
-    "jsx": "react"
+    "jsx": "react",
+    "lib": ["DOM"]
   },
   "include": [
     "src" // <-- change this to where your source files are

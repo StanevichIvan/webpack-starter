@@ -12,19 +12,23 @@ module.exports = {
     project: 'tsconfig.json',
     tsconfigRootDir: '.',
   },
+  plugins: ['react', 'sonarjs', '@typescript-eslint'],
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'plugin:sonarjs/recommended',
   ],
   settings: {
     react: {
-      version: 'detect'
+      version: 'detect',
     },
   },
   rules: {
     'react/jsx-filename-extension': 'off',
+    'sonarjs/cognitive-complexity': 'error',
+    'sonarjs/no-identical-expressions': 'error',
   },
 };
