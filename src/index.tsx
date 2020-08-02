@@ -3,10 +3,8 @@ import ReactDOM from 'react-dom';
 
 import './styles.css';
 
-console.log('Hello world');
-
 function App() {
-    return (<h1>Hello world</h1>);
+  return <h1>Hello world</h1>;
 }
 
-ReactDOM.render(<App />, document.getElementById('app'))
+ReactDOM.render(<App />, document.getElementById('app'));
