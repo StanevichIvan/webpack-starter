@@ -13,7 +13,9 @@
     "prod": "npm run webpack -- --env.mode production --env.presets compress",
     "prod:debug": "npm run debug -- --env.mode production",
     "prod:analyzer": "npm run prod -- --env.presets analyzer",
-    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "lint-js": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "lint-css": "stylelint '+(**/*.css|**/*.scss|**/*.tsx|**/*.ts|**/*.html)'",
+    "lint": "npm run lint-js && npm run lint-css",
     "prettier:format": "prettier --write 'src/**/*.{js?(x),ts?(x),json,scss}'"
   },
   "author": "Ivan",
