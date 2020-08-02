@@ -2,6 +2,8 @@ const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const postcssLoader = require('./build-utils/loadStyles');
+
 require('dotenv').config();
 
 const modeConfig = (env) => require(`./build-utils/webpack.${env}`)(env);
@@ -25,15 +27,26 @@ module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) =>
             },
           },
           {
-            test: /\.(png|jpe?g|gif)$/i,
+            test: [/\.css$/, /\.scss$/],
             use: [
+              'style-loader',
               {
-                loader: 'url-loader',
+                loader: require.resolve('css-loader'),
                 options: {
-                  limit: 5000,
+                  importLoaders: 1,
+                  // sourceMap: true,
+                  import: false,
                 },
               },
+              postcssLoader,
             ],
+          },
+          {
+            test: /\.(svg|png|ttf|eot|woff|woff2|otf)$/,
+            loader: 'file-loader',
+            options: {
+              name: `[name].[ext]`,
+            },
           },
         ],
       },
